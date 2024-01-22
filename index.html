@@ -38,12 +38,12 @@
         
               <!-- Gallery -->
                 <div class="gallery">
-                    <figure class="active">
+                    <figure v-for="(pic, i) in pictures" v-show="currentIndex === i">
                       <figcaption>
-                        <h2>Svezia</h2>
-                        <h3>Scandinavia's blend of nature and innovation.</h3>
+                        <h2>{{pic.name}}</h2>
+                        <h3>{{pic.description}}</h3>
                       </figcaption>
-                      <img src="img/01.jpg" alt="Svezia">
+                      <img :src="`img/${pic.image}`" :alt="pic.name">
                     </figure>
         
               </div>
